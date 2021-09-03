@@ -13,19 +13,26 @@ class Dashboard extends StatelessWidget {
           flex: 1,
           child: Container(
               color: Colors.purple,
-              padding: EdgeInsets.only(left: 10, top: 10, bottom: 10),
+              padding: EdgeInsets.only(left: 10, top: 30, bottom: 10),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(
-                    Icons.supervised_user_circle,
-                    size: 50,
-                    color: Colors.white,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Icon(
+                      Icons.supervised_user_circle,
+                      size: 50,
+                      color: Colors.white,
+                    ),
                   ),
                   SizedBox(height: 20),
-                  Text(
-                    "Mrs Hlebela",
-                    style:
-                        GoogleFonts.nunito(fontSize: 18, color: Colors.white),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Text(
+                      "Mrs Hlebela",
+                      style:
+                          GoogleFonts.nunito(fontSize: 16, color: Colors.white),
+                    ),
                   ),
                   SizedBox(height: 20),
                   Container(
@@ -134,8 +141,88 @@ class Dashboard extends StatelessWidget {
         ),
         Expanded(
             flex: 5,
-            child: Column(
-              children: [],
+            child: Padding(
+              padding: const EdgeInsets.only(left: 30, right: 30),
+              child: Column(
+                children: [
+                  Container(
+                    height: 50,
+                    //margin: EdgeInsets.only(left: 40, right: 40),
+                    decoration: BoxDecoration(
+                        color: Colors.grey[800],
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(20),
+                            bottomRight: Radius.circular(20))),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        flex: 4,
+                        child: Column(
+                          children: [
+                            Row(children: [
+                              Expanded(
+                                  flex: 1,
+                                  child: Container(
+                                      height: 110,
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey[200],
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(20)),
+                                      ))),
+                              SizedBox(width: 30),
+                              Expanded(
+                                  flex: 1,
+                                  child: Container(
+                                      height: 110,
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey[200],
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(20)),
+                                      ))),
+                              SizedBox(width: 30),
+                              Expanded(
+                                  flex: 1,
+                                  child: Container(
+                                      height: 110,
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey[200],
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(20)),
+                                      ))),
+                              SizedBox(width: 30),
+                              Expanded(
+                                  flex: 1,
+                                  child: Container(
+                                      height: 110,
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey[200],
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(20)),
+                                      ))),
+                            ]),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                          flex: 1,
+                          child: Container(
+                            margin: EdgeInsets.only(left: 30),
+                            height: 600,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                                color: Colors.grey[200],
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20))),
+                          )),
+                    ],
+                  )
+                ],
+              ),
             ))
       ],
     ))));
