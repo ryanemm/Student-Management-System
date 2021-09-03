@@ -10,10 +10,10 @@ class Dashboard extends StatelessWidget {
                 child: Row(
       children: [
         Expanded(
-          flex: 2,
+          flex: 1,
           child: Container(
-              color: Colors.white,
-              padding: EdgeInsets.all(10),
+              color: Colors.purple,
+              padding: EdgeInsets.only(left: 10, top: 10, bottom: 10),
               child: Column(
                 children: [
                   Icon(
@@ -36,7 +36,8 @@ class Dashboard extends StatelessWidget {
                             bottomRight: Radius.circular(20),
                           ))),
                   Container(
-                    height: 40,
+                    width: double.infinity,
+                    padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
@@ -44,6 +45,80 @@ class Dashboard extends StatelessWidget {
                         bottomLeft: Radius.circular(20),
                       ),
                     ),
+                    child: Text("Dashboard",
+                        style: GoogleFonts.nunito(
+                            fontSize: 16, color: Colors.purple)),
+                  ),
+                  Container(
+                    height: 40,
+                    width: double.infinity,
+                    padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.purple,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        bottomLeft: Radius.circular(20),
+                      ),
+                    ),
+                    child: Text("Calendar",
+                        style: GoogleFonts.nunito(
+                            fontSize: 16, color: Colors.white)),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.purple,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        bottomLeft: Radius.circular(20),
+                      ),
+                    ),
+                    child: Text("Students",
+                        style: GoogleFonts.nunito(
+                            fontSize: 16, color: Colors.white)),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.purple,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        bottomLeft: Radius.circular(20),
+                      ),
+                    ),
+                    child: Text("Marks",
+                        style: GoogleFonts.nunito(
+                            fontSize: 16, color: Colors.white)),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.purple,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        bottomLeft: Radius.circular(20),
+                      ),
+                    ),
+                    child: Text("Subjects",
+                        style: GoogleFonts.nunito(
+                            fontSize: 16, color: Colors.white)),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.purple,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        bottomLeft: Radius.circular(20),
+                      ),
+                    ),
+                    child: Text("Attendance",
+                        style: GoogleFonts.nunito(
+                            fontSize: 16, color: Colors.white)),
                   ),
                   Container(
                     height: 40,
