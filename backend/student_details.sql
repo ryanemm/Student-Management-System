@@ -8,4 +8,4 @@ CREATE TABLE IF NOT EXISTS 'student_details' (
 	'adress' varchar(50),
 	PRIMARY KEY ('id')	
 	);
-
+ 
