@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:student_management_system/screens/Dashboard/attendance.dart';
+import 'package:student_management_system/screens/Dashboard/marks.dart';
 import 'package:student_management_system/screens/Dashboard/upcoming.dart';
 
 class Dashboard extends StatelessWidget {
@@ -141,7 +142,7 @@ class Dashboard extends StatelessWidget {
                 ],
               )),
         ),
-        Expanded(flex: 5, child: Attendance())
+        Expanded(flex: 5, child: MarksScreen())
       ],
     ))));
   }
