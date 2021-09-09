@@ -143,7 +143,13 @@ class Dashboard extends StatelessWidget {
                 ],
               )),
         ),
-        Expanded(flex: 5, child: CalendarPage())
+        Expanded(
+            flex: 5,
+            child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.deepPurple,
+                ),
+                child: CalendarPage()))
       ],
     ))));
   }
