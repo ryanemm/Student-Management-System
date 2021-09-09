@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:student_management_system/screens/Dashboard/marks.dart';
 import 'package:student_management_system/screens/Dashboard/upcoming.dart';
 
 class Home extends StatefulWidget {
@@ -78,7 +77,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              Expanded(flex: 1, child: MarksScreen()),
+              Expanded(flex: 1, child: Upcoming()),
             ],
           )
         ],
