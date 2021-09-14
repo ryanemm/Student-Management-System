@@ -21,6 +21,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^ 2.1.0
   table_calendar: ^3.0.2
+  time_planner: ^0.0.3
 
 dev_dependencies:
   flutter_test:

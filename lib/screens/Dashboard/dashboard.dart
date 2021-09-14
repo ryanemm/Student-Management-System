@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:student_management_system/screens/Dashboard/attendance.dart';
 import 'package:student_management_system/screens/Dashboard/calendar.dart';
 import 'package:student_management_system/screens/Dashboard/marks.dart';
+import 'package:student_management_system/screens/Dashboard/planner.dart';
 import 'package:student_management_system/screens/Dashboard/upcoming.dart';
 
 class Dashboard extends StatelessWidget {
@@ -113,7 +114,7 @@ class Dashboard extends StatelessWidget {
                         bottomLeft: Radius.circular(20),
                       ),
                     ),
-                    child: Text("Subjects",
+                    child: Text("Timetable",
                         style: GoogleFonts.nunito(
                             fontSize: 16, color: Colors.white)),
                   ),
@@ -149,7 +150,7 @@ class Dashboard extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.deepPurple,
                 ),
-                child: CalendarPage()))
+                child: PlannerPage()))
       ],
     ))));
   }
