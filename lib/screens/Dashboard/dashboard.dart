@@ -6,7 +6,13 @@ import 'package:student_management_system/screens/Dashboard/marks.dart';
 import 'package:student_management_system/screens/Dashboard/planner.dart';
 import 'package:student_management_system/screens/Dashboard/upcoming.dart';
 
-class Dashboard extends StatelessWidget {
+class Dashboard extends StatefulWidget {
+  @override
+  _DashboardState createState() => _DashboardState();
+}
+
+class _DashboardState extends State<Dashboard> {
+  Widget currentChild = PlannerPage();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,11 +78,19 @@ class Dashboard extends StatelessWidget {
                         bottomLeft: Radius.circular(20),
                       ),
                     ),
-                    child: Text("Calendar",
+                    child: GestureDetector(
+                    	onTap: () { setState(() {
+                    			currentChild = CalendarPage();
+                    			}); },
+                    	child: Text("Calendar",
                         style: GoogleFonts.nunito(
-                            fontSize: 16, color: Colors.white)),
+                            fontSize: 16, color: Colors.white)),),
                   ),
-                  Container(
+                  GestureDetector(
+                  onTap: () {
+                  	setState(() {
+                  	currentChild = Attendance();});},
+                  child: Container(
                     width: double.infinity,
                     padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
                     decoration: BoxDecoration(
@@ -89,8 +103,12 @@ class Dashboard extends StatelessWidget {
                     child: Text("Students",
                         style: GoogleFonts.nunito(
                             fontSize: 16, color: Colors.white)),
-                  ),
-                  Container(
+                  ),),
+                  GestureDetector(
+                  onTap: () {
+                  	setState(() {
+                  	currentChild = MarksScreen();});},
+                  child: Container(
                     width: double.infinity,
                     padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
                     decoration: BoxDecoration(
@@ -103,8 +121,12 @@ class Dashboard extends StatelessWidget {
                     child: Text("Marks",
                         style: GoogleFonts.nunito(
                             fontSize: 16, color: Colors.white)),
-                  ),
-                  Container(
+                  ),),
+                  GestureDetector(
+                  onTap: () {
+                  	setState(() {
+                  	currentChild = PlannerPage();});},
+                  child: Container(
                     width: double.infinity,
                     padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
                     decoration: BoxDecoration(
@@ -117,8 +139,12 @@ class Dashboard extends StatelessWidget {
                     child: Text("Timetable",
                         style: GoogleFonts.nunito(
                             fontSize: 16, color: Colors.white)),
-                  ),
-                  Container(
+                  ),),
+                  GestureDetector(
+                  onTap: () {
+                  	setState(() {
+                  	currentChild = Attendance();});},
+                  child: Container(
                     width: double.infinity,
                     padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
                     decoration: BoxDecoration(
@@ -131,7 +157,7 @@ class Dashboard extends StatelessWidget {
                     child: Text("Attendance",
                         style: GoogleFonts.nunito(
                             fontSize: 16, color: Colors.white)),
-                  ),
+                  ),),
                   Container(
                     height: 40,
                     decoration: BoxDecoration(
@@ -146,11 +172,15 @@ class Dashboard extends StatelessWidget {
         ),
         Expanded(
             flex: 5,
-            child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.deepPurple,
+            child: 
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurple,
+                  ),
+                  child: currentChild,
                 ),
-                child: PlannerPage()))
+             
+            )
       ],
     ))));
   }

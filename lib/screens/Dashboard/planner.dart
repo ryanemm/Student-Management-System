@@ -30,7 +30,7 @@ class _PlannerPageState extends State<PlannerPage> {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(30)),
           color: Colors.white),
-      padding: EdgeInsets.all(30),
+      //padding: EdgeInsets.all(30),
       child: TimePlanner(
           //planner will start eaxh day at this time
           startHour: 6,
