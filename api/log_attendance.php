@@ -12,7 +12,7 @@ $studentId = $_POST['studentId'];
 $date = $_POST['date'];
 $present = $_POST['present'];
 
-$stmt = $db->prepare("INSERT INTO articles (title, summary, content) VALUES (?,>
+$stmt = $db->prepare("INSERT INTO articles (title, summary, content) VALUES (?, ?, ?)";
 $result = $stmt->execute([$studentId, $date, $present]);
 
 echo json_encode([
