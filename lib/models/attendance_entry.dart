@@ -1,12 +1,12 @@
-class Student {
+class AttendanceEntry {
   final int id;
   final String name;
   final int age;
 
-  Student({this.id, this.name, this.age});
+  AttendanceEntry({this.id, this.name, this.age});
 
-  factory Student.fromJson(Map<String, dynamic> json) {
-    return Student(
+  factory AttendanceEntry.fromJson(Map<String, dynamic> json) {
+    return AttendanceEntry(
       id: json['id'],
       name: json['name'],
       age: json['age'],
