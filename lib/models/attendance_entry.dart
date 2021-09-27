@@ -1,20 +1,22 @@
 class AttendanceEntry {
-  final int id;
-  final String name;
-  final int age;
+  final int studentId;
+  final String studentName;
+  final String date;
+  final bool present;
 
-  AttendanceEntry({this.id, this.name, this.age});
+  const AttendanceEntry({
+    required this.studentId,
+    required this.studentName,
+    required this.date,
+    required this.present,
+  });
 
   factory AttendanceEntry.fromJson(Map<String, dynamic> json) {
     return AttendanceEntry(
-      id: json['id'],
-      name: json['name'],
-      age: json['age'],
+      studentId: json['studentId'] as int,
+      studentName: json['studentName'] as String,
+      date: json['date'] as String,
+      present: json['present'] as bool,
     );
   }
-
-  Map<String, dynamic> toJson() => {
-    'name': name,
-    'age': age,
-  };
 }
