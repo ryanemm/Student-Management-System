@@ -2,7 +2,7 @@ class AttendanceEntry {
   final int studentId;
   final String studentName;
   final String date;
-  final bool present;
+  final int present;
 
   const AttendanceEntry({
     required this.studentId,
@@ -16,7 +16,7 @@ class AttendanceEntry {
       studentId: json['studentId'] as int,
       studentName: json['studentName'] as String,
       date: json['date'] as String,
-      present: json['present'] as bool,
+      present: json['present'] as int,
     );
   }
 }

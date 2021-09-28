@@ -13,10 +13,18 @@ class Attendance extends StatefulWidget {
 }
 
 class _AttendanceState extends State<Attendance> {
-  Future<List<AttendanceEntry>> fetchAttendance(http.Client client) async {
-    var response = await http.get(Uri.parse("8.209.117.57/cms/list.php"));
+  late Future<List<AttendanceEntry>> _fetchAttendance;
 
-    return compute(parseAttendanceEntries, response.body);
+  @override
+  void initState() {
+    _fetchAttendance = fetchAttendance(http.Client());
+  }
+
+  Future<List<AttendanceEntry>> fetchAttendance(http.Client client) async {
+    var response =
+        await http.get(Uri.parse("http://8.209.117.57/cms/list.php"));
+
+    return parseAttendanceEntries(response.body);
   }
 
   //a function that converts a response body to a list of attendanceEntries
@@ -32,12 +40,16 @@ class _AttendanceState extends State<Attendance> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<AttendanceEntry>>(
-      future: fetchAttendance(http.Client()),
+      future: _fetchAttendance,
       builder: (context, snapshot) {
         if (snapshot.hasError) {
-          return const Center(
-            child: Text("An error has occurred"),
-          );
+          return Center(
+              child: Column(
+            children: [
+              Icon(Icons.error_outline, color: Colors.red, size: 100),
+              Text(snapshot.data.toString())
+            ],
+          ));
         } else if (snapshot.hasData) {
           return AttendanceList(attList: snapshot.data!);
         } else {
@@ -102,7 +114,7 @@ class AttendanceList extends StatelessWidget {
     return ListView.builder(
         itemCount: attList.length,
         itemBuilder: (context, index) {
-          return Column(
+          return Row(
             children: [
               Text(attList[index].studentName),
               Text(attList[index].present.toString())

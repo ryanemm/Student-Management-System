@@ -5,6 +5,7 @@ import 'package:student_management_system/screens/Dashboard/calendar.dart';
 import 'package:student_management_system/screens/Dashboard/marks.dart';
 import 'package:student_management_system/screens/Dashboard/planner.dart';
 import 'package:student_management_system/screens/Dashboard/upcoming.dart';
+import 'package:student_management_system/screens/Dashboard/new_article.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -89,7 +90,7 @@ class _DashboardState extends State<Dashboard> {
                   GestureDetector(
                   onTap: () {
                   	setState(() {
-                  	currentChild = Attendance();});},
+                  	currentChild = NewArticle();});},
                   child: Container(
                     width: double.infinity,
                     padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
