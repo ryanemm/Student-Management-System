@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:student_management_system/screens/Dashboard/new_assignment_dialog.dart';
 
 class MarksScreen extends StatefulWidget {
   @override
@@ -99,7 +100,13 @@ class _MarksScreenState extends State<MarksScreen> {
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return NewAssignmentDialog();
+                        });
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

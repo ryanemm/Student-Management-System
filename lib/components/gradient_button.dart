@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 
-class SimpleButton extends StatelessWidget {
-  const SimpleButton({
+class GradientButton extends StatelessWidget {
+  const GradientButton({
     Key? key,
     this.text = "Button",
     this.ftSize = 16.0,
