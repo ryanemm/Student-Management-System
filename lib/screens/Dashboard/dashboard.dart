@@ -14,6 +14,11 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   Widget currentChild = PlannerPage();
+  String selectedCalendar = 'false';
+  String selectedStudents = 'false';
+  String selectedMarks = 'false';
+  String selectedTimetable = 'false';
+  String selectedAttendance = 'false';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +63,7 @@ class _DashboardState extends State<Dashboard> {
                     width: double.infinity,
                     padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Colors.deepPurple,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20),
                         bottomLeft: Radius.circular(20),
@@ -66,99 +71,140 @@ class _DashboardState extends State<Dashboard> {
                     ),
                     child: Text("Dashboard",
                         style: GoogleFonts.nunito(
-                            fontSize: 16, color: Colors.deepPurple)),
+                            fontSize: 16, color: Colors.white)),
                   ),
                   Container(
                     height: 40,
                     width: double.infinity,
                     padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        bottomLeft: Radius.circular(20),
-                      ),
-                    ),
+                    decoration:
+                     BoxDecoration(
+                            color: selectedCalendar == 'true' ? Colors.white : Colors.deepPurple,
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              bottomLeft: Radius.circular(20),
+                            ),
+                          ),
                     child: GestureDetector(
-                    	onTap: () { setState(() {
-                    			currentChild = CalendarPage();
-                    			}); },
-                    	child: Text("Calendar",
-                        style: GoogleFonts.nunito(
-                            fontSize: 16, color: Colors.white)),),
+                      onTap: () {
+                        setState(() {
+                          selectedCalendar = 'true';
+                          selectedStudents = 'false';
+                          selectedMarks = 'false';
+                          selectedTimetable = 'false';
+                          selectedAttendance = 'false';
+                          currentChild = CalendarPage();
+                        });
+                      },
+                      child: Text("Calendar",
+                          style: GoogleFonts.nunito(
+                              fontSize: 16, color: selectedCalendar == 'true' ? Colors.deepPurple : Colors.white,)),
+                    ),
                   ),
                   GestureDetector(
-                  onTap: () {
-                  	setState(() {
-                  	currentChild = NewArticle();});},
-                  child: Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        bottomLeft: Radius.circular(20),
+                    onTap: () {
+                      setState(() {
+                        selectedCalendar = 'false';
+                        selectedStudents = 'true';
+                        selectedMarks = 'false';
+                        selectedTimetable = 'false';
+                        selectedAttendance = 'false';
+                        currentChild = NewArticle();
+                      });
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
+                      decoration: BoxDecoration(
+                      color: selectedStudents == 'true' ? Colors.white : Colors.deepPurple,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          bottomLeft: Radius.circular(20),
+                        ),
                       ),
+                      child: Text("Students",
+                          style: GoogleFonts.nunito(
+                              fontSize: 16, color: selectedStudents == 'true' ? Colors.deepPurple : Colors.white,)),
                     ),
-                    child: Text("Students",
-                        style: GoogleFonts.nunito(
-                            fontSize: 16, color: Colors.white)),
-                  ),),
+                  ),
                   GestureDetector(
-                  onTap: () {
-                  	setState(() {
-                  	currentChild = MarksScreen();});},
-                  child: Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        bottomLeft: Radius.circular(20),
+                    onTap: () {
+                      setState(() {
+                        selectedCalendar = 'false';
+                        selectedStudents = 'false';
+                        selectedMarks = 'true';
+                        selectedTimetable = 'false';
+                        selectedAttendance = 'false';
+                        currentChild = MarksScreen();
+                      });
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
+                      decoration: BoxDecoration(
+                        color: selectedMarks == 'true' ? Colors.white : Colors.deepPurple,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          bottomLeft: Radius.circular(20),
+                        ),
                       ),
+                      child: Text("Marks",
+                          style: GoogleFonts.nunito(
+                              fontSize: 16, color: selectedMarks == 'true' ? Colors.deepPurple : Colors.white,)),
                     ),
-                    child: Text("Marks",
-                        style: GoogleFonts.nunito(
-                            fontSize: 16, color: Colors.white)),
-                  ),),
+                  ),
                   GestureDetector(
-                  onTap: () {
-                  	setState(() {
-                  	currentChild = PlannerPage();});},
-                  child: Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        bottomLeft: Radius.circular(20),
+                    onTap: () {
+                      setState(() {
+                        selectedCalendar = 'false';
+                        selectedStudents = 'false';
+                        selectedMarks = 'false';
+                        selectedTimetable = 'true';
+                        selectedAttendance = 'false';
+                        currentChild = PlannerPage();
+                      });
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
+                      decoration: BoxDecoration(
+                        color: selectedTimetable == 'true' ? Colors.white : Colors.deepPurple,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          bottomLeft: Radius.circular(20),
+                        ),
                       ),
+                      child: Text("Timetable",
+                          style: GoogleFonts.nunito(
+                              fontSize: 16, color: selectedTimetable == 'true' ? Colors.deepPurple : Colors.white,)),
                     ),
-                    child: Text("Timetable",
-                        style: GoogleFonts.nunito(
-                            fontSize: 16, color: Colors.white)),
-                  ),),
+                  ),
                   GestureDetector(
-                  onTap: () {
-                  	setState(() {
-                  	currentChild = Attendance();});},
-                  child: Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        bottomLeft: Radius.circular(20),
+                    onTap: () {
+                      setState(() {
+                        selectedCalendar = 'false';
+                        selectedStudents = 'false';
+                        selectedMarks = 'false';
+                        selectedTimetable = 'false';
+                        selectedAttendance = 'true';
+                        currentChild = Attendance();
+                      });
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
+                      decoration: BoxDecoration(
+                        color: selectedAttendance == 'true' ? Colors.white : Colors.deepPurple,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          bottomLeft: Radius.circular(20),
+                        ),
                       ),
+                      child: Text("Attendance",
+                          style: GoogleFonts.nunito(
+                              fontSize: 16, color: selectedAttendance == 'true' ? Colors.deepPurple : Colors.white,)),
                     ),
-                    child: Text("Attendance",
-                        style: GoogleFonts.nunito(
-                            fontSize: 16, color: Colors.white)),
-                  ),),
+                  ),
                   Container(
                     height: 40,
                     decoration: BoxDecoration(
@@ -172,16 +218,17 @@ class _DashboardState extends State<Dashboard> {
               )),
         ),
         Expanded(
-            flex: 5,
-            child: 
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.deepPurple,
-                  ),
-                  child: currentChild,
-                ),
-             
-            )
+          flex: 5,
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.deepPurple,
+            ),
+            child: AnimatedSwitcher(
+              duration: const Duration(seconds: 1),
+              child: currentChild,),
+              //currentChild,
+          ),
+        )
       ],
     ))));
   }

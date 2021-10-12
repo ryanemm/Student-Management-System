@@ -4,6 +4,7 @@ import "dart:async";
 import "package:flutter/foundation.dart";
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import "package:http/http.dart" as http;
 import 'package:student_management_system/models/attendance_entry.dart';
 
@@ -39,7 +40,7 @@ class _AttendanceState extends State<Attendance> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<List<AttendanceEntry>>(
+    return /*FutureBuilder<List<AttendanceEntry>>(
       future: _fetchAttendance,
       builder: (context, snapshot) {
         if (snapshot.hasError) {
@@ -58,50 +59,150 @@ class _AttendanceState extends State<Attendance> {
           );
         }
       },
-    );
-
-    /*Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(30)),
-          color: Colors.white),
-      padding: EdgeInsets.all(20),
-      child: DataTable(
-        columns: [
-          DataColumn(label: Text("Name")),
-          DataColumn(label: Text("Monday")),
-          DataColumn(label: Text("Tuesday")),
-          DataColumn(label: Text("Wednesday")),
-          DataColumn(label: Text("Thursday")),
-          DataColumn(label: Text("Friday")),
-        ],
-        rows: [
-          DataRow(cells: [
-            DataCell(Text("Lerato")),
-            DataCell(Icon(Icons.radio_button_unchecked)),
-            DataCell(Icon(Icons.check)),
-            DataCell(Icon(Icons.radio_button_unchecked)),
-            DataCell(Icon(Icons.check)),
-            DataCell(Icon(Icons.check)),
-          ]),
-          DataRow(cells: [
-            DataCell(Text("Tom")),
-            DataCell(Icon(Icons.check)),
-            DataCell(Icon(Icons.check)),
-            DataCell(Icon(Icons.radio_button_unchecked)),
-            DataCell(Icon(Icons.check)),
-            DataCell(Icon(Icons.check)),
-          ]),
-          DataRow(cells: [
-            DataCell(Text("Ryan")),
-            DataCell(Icon(Icons.check)),
-            DataCell(Icon(Icons.check)),
-            DataCell(Icon(Icons.radio_button_unchecked)),
-            DataCell(Icon(Icons.check)),
-            DataCell(Icon(Icons.check)),
-          ]),
-        ],
-      ),
     );*/
+
+        Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(30)),
+                color: Colors.white),
+            padding: EdgeInsets.all(20),
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              DataTable(
+                columns: [
+                  DataColumn(label: Text("Name")),
+                  DataColumn(label: Text("Monday 20")),
+                  DataColumn(label: Text("Tuesday 21")),
+                  DataColumn(label: Text("Wednesday 22")),
+                  DataColumn(label: Text("Thursday 23")),
+                  DataColumn(label: Text("Friday 24")),
+                  DataColumn(label: Text("Monday 27")),
+                  DataColumn(label: Text("Tuesday 28")),
+                ],
+                rows: [
+                  DataRow(cells: [
+                    DataCell(Text("Lerato")),
+                    DataCell(Icon(Icons.radio_button_unchecked)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.radio_button_unchecked)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.radio_button_unchecked)),
+                    DataCell(Icon(Icons.check)),
+                  ]),
+                  DataRow(cells: [
+                    DataCell(Text("Tom")),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.radio_button_unchecked)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.radio_button_unchecked)),
+                    DataCell(Icon(Icons.check)),
+                  ]),
+                  DataRow(cells: [
+                    DataCell(Text("Ryan")),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.radio_button_unchecked)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                  ]),
+                  DataRow(cells: [
+                    DataCell(Text("Lerato")),
+                    DataCell(Icon(Icons.radio_button_unchecked)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.radio_button_unchecked)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                  ]),
+                  DataRow(cells: [
+                    DataCell(Text("Tom")),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.radio_button_unchecked)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                  ]),
+                  DataRow(cells: [
+                    DataCell(Text("Ryan")),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.radio_button_unchecked)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                  ]),
+                  DataRow(cells: [
+                    DataCell(Text("Lerato")),
+                    DataCell(Icon(Icons.radio_button_unchecked)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.radio_button_unchecked)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                  ]),
+                  DataRow(cells: [
+                    DataCell(Text("Tom")),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.radio_button_unchecked)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                  ]),
+                  DataRow(cells: [
+                    DataCell(Text("Ryan")),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.radio_button_unchecked)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                  ]),
+                  DataRow(cells: [
+                    DataCell(Text("Lerato")),
+                    DataCell(Icon(Icons.radio_button_unchecked)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.radio_button_unchecked)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),
+                  ]),
+                ],
+              ),
+              SizedBox(height: 15),
+              Center(
+                child: Container(
+                    padding:
+                        EdgeInsets.only(bottom: 6, top: 6, left: 50, right: 50),
+                    decoration: BoxDecoration(
+                      color: Color(0xFFFFBF00),
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "TAKE DAILY ATTENDANCE",
+                        style: GoogleFonts.nunito(
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xFF003049),
+                            fontSize: 16),
+                      ),
+                    )),
+              ),
+            ]));
   }
 }
 
