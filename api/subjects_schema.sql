@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS `subjects`;
+CREATE TABLE IF NOT EXISTS `subjects`(
+	`id` INT NOT NULL PRIMARY KEY,
+	`subject_name` VARCHAR(20) NOT NULL,
+	);
