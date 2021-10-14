@@ -40,7 +40,7 @@ class _AttendanceState extends State<Attendance> {
 
   @override
   Widget build(BuildContext context) {
-    return /*FutureBuilder<List<AttendanceEntry>>(
+    return FutureBuilder<List<AttendanceEntry>>(
       future: _fetchAttendance,
       builder: (context, snapshot) {
         if (snapshot.hasError) {
@@ -59,9 +59,9 @@ class _AttendanceState extends State<Attendance> {
           );
         }
       },
-    );*/
+    );
 
-        Container(
+        /*Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(30)),
                 color: Colors.white),
@@ -155,7 +155,7 @@ class _AttendanceState extends State<Attendance> {
                     DataCell(Icon(Icons.check)),
                     DataCell(Icon(Icons.check)),
                     DataCell(Icon(Icons.radio_button_unchecked)),
-                    DataCell(Icon(Icons.check)),
+                    DataCell(Icon(Icons.check)),practice
                     DataCell(Icon(Icons.check)),
                     DataCell(Icon(Icons.check)),
                     DataCell(Icon(Icons.check)),
@@ -202,7 +202,7 @@ class _AttendanceState extends State<Attendance> {
                       ),
                     )),
               ),
-            ]));
+            ]));*/
   }
 }
 
